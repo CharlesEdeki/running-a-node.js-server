@@ -1,6 +1,6 @@
 # Web Server with NodeJs
 
-## What is a web server?
+## About
 
 Now let us use an example to get this straight. Let's say you go to a restaurant and you want to make an order. You probably know what you want but the waiter still brings the menu for you to be more specific. You choose the specific meal you want and other things inclusive, then the waiter goes to the one who serves to give him/her exactly what you've "specifically" ordered. Minutes later your order is served.
 
@@ -8,6 +8,8 @@ Now you in that example is your system/browser (client), anytime you try to go t
 
 A Web Server is what serves resources you request from your browser.
 
+Our http server here handles incoming requests by using the request and response objects that Node.Js provides.
+
 ## contributor
 
-<a href=<http://GitHub.com/tee-stark>Tee> Stark</a>
+<a href=<http://GitHub.com/tee-stark>Tee Stark</a>
