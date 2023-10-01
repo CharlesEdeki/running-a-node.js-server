@@ -2,17 +2,34 @@ var http = require('http');
 
 const PORT = 3000;
 
-server = http.createServer(function (req, res) {
-    if (req.url === '/') {
-    // res.writeHead(200, {'Content-Type': 'application/json'}); // writeHead is used to write the header of the response
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({
+const friends = [
+    {
         id: 1,
         name: "John Doe",
-        email: "hello@email.com"
-    }));
-    } else if (req.url === '/about') {
+        email: "john.doe@email.com"
+    },
+    {
+        id: 2,
+        name: "William Watson",
+        email: "willwat@email.com"
+    },
+]
+
+server = http.createServer(function (req, res) {
+    const items = req.url.split('/');
+    // what split will do if you have a url like /friends/1 => ['','friends','1']
+    if (items[1] === 'friends') {
+        // res.writeHead(200, {'Content-Type': 'application/json'}); // writeHead is used to write the header of the response
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        if (items.length === 3) { 
+            const friendIndex = Number(items[2]);
+            res.end(JSON.stringify(friends[friendIndex]));
+        } else {
+            res.end(JSON.stringify(friends));
+        }
+    
+    } else if (items[1] === 'about') {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
         res.write('<html>');
