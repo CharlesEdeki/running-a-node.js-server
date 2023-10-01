@@ -12,4 +12,4 @@ Our http server here handles incoming requests by using the request and response
 
 ## contributor
 
-<a href=<http://GitHub.com/tee-stark>Tee Stark</a>
+<a href="http://GitHub.com/tee-stark">Tee Stark</a>
